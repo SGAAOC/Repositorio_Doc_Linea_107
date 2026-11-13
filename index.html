@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio Documental - Línea 107 | EsSalud</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        essalud: {
+                            primary: '#005B94',
+                            secondary: '#00A79C',
+                            light: '#E6F0FA',
+                            dark: '#003358'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <!-- Header institucional -->
+    <header class="bg-essalud-primary text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-3 md:mb-0">
+                <div class="bg-white text-essalud-primary p-2 rounded-lg font-bold text-xl tracking-wider shadow">
+                    <i class="fa-solid fa-hospital-user mr-2 text-essalud-secondary"></i>EsSalud
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">Seguro Social de Salud del Perú</h1>
+                    <p class="text-xs text-essalud-light tracking-wide uppercase font-semibold">Central Telefónica - Línea 107</p>
+                </div>
+            </div>
+            <div class="text-sm bg-essalud-dark px-4 py-2 rounded-full border border-blue-400/30 flex items-center">
+                <i class="fa-solid fa-headset mr-2 text-essalud-secondary animate-pulse"></i>
+                <span>Portal de Gestión Documental y Normativa</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-essalud-primary to-essalud-dark text-white py-12 px-4 shadow-inner">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Repositorio de Documentos Línea 107</h2>
+            <p class="text-blue-100 max-w-2xl mx-auto text-sm md:text-base mb-8">
+                Plataforma centralizada de acceso a manuales operativos, protocolos de atención, reportes de turnos, guías de teleorientación y documentación institucional.
+            </p>
+            
+            <!-- Barra de Búsqueda Interactiva -->
+            <div class="relative max-w-xl mx-auto">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
+                    <i class="fa-solid fa-search"></i>
+                </span>
+                <input type="text" id="searchInput" onkeyup="filterDocuments()" placeholder="Buscar por título, categoría o tipo de archivo..." 
+                    class="w-full pl-11 pr-4 py-3 rounded-lg text-gray-800 bg-white shadow-lg focus:outline-none focus:ring-2 focus:ring-essalud-secondary text-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold text-gray-800 flex items-center">
+                <i class="fa-solid fa-folder-open text-essalud-primary mr-2"></i> Documentos Disponibles
+            </h3>
+            <span id="docCount" class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">Mostrando 4 documentos</span>
+        </div>
+
+        <!-- Cuadrícula de Documentos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="documentGrid">
+            
+            <!-- Documento 1 (PDF) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="protocolo general de atencion linea 107 manual operaciones pdf">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> PDF
+                        </span>
+                        <span class="text-xs text-gray-400 font-medium">Actualizado</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Protocolo General de Atención - Línea 107</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Lineamientos normativos para la gestión de llamadas, derivaciones médicas y clasificación de opciones del servicio.</p>
+                </div>
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
+                    <a href="documentos/protocolo_linea_107.pdf" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
+                    </a>
+                </div>
+            </div>
+
+            <!-- Documento 2 (Excel / Otro) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="matriz de turnos y programacion operativa agentes excel xlsx">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-excel mr-1.5"></i> XLSX
+                        </span>
+                        <span class="text-xs text-gray-400 font-medium">Actualizado</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Matriz de Turnos y Programación Operativa</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Plantilla de control de turnos de operadores, validación de asistencias y distribución horaria del call center.</p>
+                </div>
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
+                    <a href="documentos/matriz_turnos.xlsx" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
+                    </a>
+                </div>
+            </div>
+
+            <!-- Documento 3 (PDF) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="reporte de indicadores de llamadas y kpis de productividad pdf">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> PDF
+                        </span>
+                        <span class="text-xs text-gray-400 font-medium">Actualizado</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Reporte de Indicadores y KPIs</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Análisis consolidado del volumen de llamadas entrantes, tiempos de espera y métricas de resolución de la Central.</p>
+                </div>
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
+                    <a href="documentos/kpis_linea107.pdf" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
+                    </a>
+                </div>
+            </div>
+
+            <!-- Documento 4 (PDF) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="guia de alertas sanitarias opcion 0 prevencion pdf">
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> PDF
+                        </span>
+                        <span class="text-xs text-gray-400 font-medium">Actualizado</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Guía de Alertas Sanitarias (Opción 0)</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Directrices informativas para la orientación y prevención frente a enfermedades estacionales y emergencias epidemiológicas.</p>
+                </div>
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
+                    <a href="documentos/guia_alertas_sanitarias.pdf" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mensaje sin resultados -->
+        <div id="noResults" class="hidden text-center py-12">
+            <i class="fa-solid fa-folder-closed text-4xl text-gray-300 mb-3"></i>
+            <p class="text-gray-500 font-medium">No se encontraron documentos que coincidan con la búsqueda.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer institucional -->
+    <footer class="bg-essalud-dark text-gray-300 py-6 mt-12 border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs space-y-3 md:space-y-0">
+            <p>© 2026 Seguro Social de Salud (EsSalud) - Central Telefónica Línea 107. Todos los derechos reservados.</p>
+            <div class="flex space-x-4">
+                <span class="flex items-center"><i class="fa-solid fa-shield-halved text-essalud-secondary mr-1"></i> Entorno Seguro</span>
+                <span class="flex items-center"><i class="fa-solid fa-code text-essalud-secondary mr-1"></i> GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de filtrado -->
+    <script>
+        function filterDocuments() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.doc-card');
+            let noResults = document.getElementById('noResults');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let title = card.getAttribute('data-title');
+                if (title.includes(input)) {
+                    card.style.display = "flex";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            document.getElementById('docCount').innerText = `Mostrando ${visibleCount} documentos`;
+            
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
