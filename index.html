@@ -77,8 +77,8 @@
         <!-- Cuadrícula de Documentos -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="documentGrid">
             
-            <!-- Documento 1 (.pptx mostrado en visor desde Google Drive) -->
-            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="protocolo general de atencion linea 107 manual operaciones pdf pptx">
+            <!-- Documento 1 con vista previa pequeña al pasar el cursor sobre "Ver PDF" -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-visible flex flex-col justify-between" data-title="protocolo general de atencion linea 107 manual operaciones pdf pptx">
                 <div class="p-5">
                     <div class="flex justify-between items-start mb-3">
                         <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
@@ -89,11 +89,31 @@
                     <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Protocolo General de Atención - Línea 107</h4>
                     <p class="text-xs text-gray-600 mb-4 line-clamp-2">Lineamientos normativos para la gestión de llamadas, derivaciones médicas y clasificación de opciones del servicio.</p>
                 </div>
-                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
+
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center rounded-b-xl">
                     <span class="text-xs text-gray-500 font-medium">☁️ Google Drive</span>
-                    <a href="https://docs.google.com/presentation/d/12ustb70wMZ18ML-k39vRJUrFWJ9-m_SK/preview" target="_blank" rel="noopener noreferrer" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
-                        <i class="fa-solid fa-file-pdf mr-1.5"></i> Ver PDF
-                    </a>
+
+                    <!-- Contenedor con vista previa flotante al hacer hover -->
+                    <div class="relative group">
+                        <!-- Cajita de vista previa -->
+                        <div class="hidden group-hover:block fixed md:absolute bottom-12 right-4 md:right-0 z-50 w-80 h-56 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden pointer-events-none transition-opacity duration-150">
+                            <div class="bg-essalud-dark text-white text-[11px] px-3 py-1.5 flex items-center justify-between">
+                                <span class="truncate font-medium">Vista previa del documento</span>
+                                <i class="fa-solid fa-eye text-essalud-secondary"></i>
+                            </div>
+                            <iframe 
+                                src="https://docs.google.com/presentation/d/12ustb70wMZ18ML-k39vRJUrFWJ9-m_SK/preview" 
+                                class="w-full h-[calc(100%-28px)] border-0"
+                                loading="lazy"
+                                title="Vista previa del documento">
+                            </iframe>
+                        </div>
+
+                        <!-- Botón Ver PDF -->
+                        <a href="https://docs.google.com/presentation/d/12ustb70wMZ18ML-k39vRJUrFWJ9-m_SK/preview" target="_blank" rel="noopener noreferrer" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> Ver PDF
+                        </a>
+                    </div>
                 </div>
             </div>
 
