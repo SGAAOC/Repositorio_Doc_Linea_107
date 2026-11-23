@@ -86,7 +86,7 @@
                         </span>
                         <span class="text-xs text-gray-400 font-medium">Actualizado</span>
                     </div>
-                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Protocolo General de Atención - Línea 107</h4>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Protocolo general de atención - Línea 107</h4>
                     <p class="text-xs text-gray-600 mb-4 line-clamp-2">Lineamientos normativos para la gestión de llamadas, derivaciones médicas y clasificación de opciones del servicio.</p>
                 </div>
 
@@ -126,7 +126,7 @@
                         </span>
                         <span class="text-xs text-gray-400 font-medium">Actualizado</span>
                     </div>
-                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Proceso de Atención para Llamadas mal intencionadas</h4>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Proceso de atención para llamadas mal intencionadas</h4>
                     <p class="text-xs text-gray-600 mb-4 line-clamp-2">Protocolo y lineamientos de actuación para operadores ante llamadas malintencionadas, improcedentes o reiterativas en la Línea 107.</p>
                 </div>
 
@@ -157,8 +157,8 @@
                 </div>
             </div>
 
-            <!-- Documento 3 (PDF) -->
-            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="reporte de indicadores de llamadas y kpis de productividad pdf">
+            <!-- Documento 3 (PDF desde Google Drive) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-visible flex flex-col justify-between" data-title="intercomunicacion linea 100 linea 107 pdf">
                 <div class="p-5">
                     <div class="flex justify-between items-start mb-3">
                         <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
@@ -166,34 +166,74 @@
                         </span>
                         <span class="text-xs text-gray-400 font-medium">Actualizado</span>
                     </div>
-                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Reporte de Indicadores y KPIs</h4>
-                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Análisis consolidado del volumen de llamadas entrantes, tiempos de espera y métricas de resolución de la Central.</p>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Intercomunicación Linea 100 - Linea 107</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Procedimiento y protocolos de articulación, derivación y atención coordinada entre la Línea 100 y la Línea 107 de EsSalud.</p>
                 </div>
-                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
-                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
-                    <a href="documentos/kpis_linea107.pdf" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
-                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
-                    </a>
+
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center rounded-b-xl">
+                    <span class="text-xs text-gray-500 font-medium">☁️ Google Drive</span>
+
+                    <!-- Contenedor con vista previa flotante al pasar el cursor -->
+                    <div class="relative group">
+                        <!-- Cajita de vista previa -->
+                        <div class="hidden group-hover:block fixed md:absolute bottom-12 right-4 md:right-0 z-50 w-80 h-60 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden pointer-events-none transition-opacity duration-150">
+                            <div class="bg-essalud-dark text-white text-[11px] px-3 py-1.5 flex items-center justify-between">
+                                <span class="truncate font-medium">Vista previa del PDF</span>
+                                <i class="fa-solid fa-eye text-essalud-secondary"></i>
+                            </div>
+                            <iframe 
+                                src="https://drive.google.com/file/d/1lALUQW6uvj-sIfAEZjliouPZKztqCXZm/preview" 
+                                class="w-full h-[calc(100%-28px)] border-0 bg-gray-100"
+                                loading="lazy"
+                                title="Vista previa del PDF">
+                            </iframe>
+                        </div>
+
+                        <!-- Botón Ver PDF (vista completa en nueva pestaña) -->
+                        <a href="https://drive.google.com/file/d/1lALUQW6uvj-sIfAEZjliouPZKztqCXZm/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> Ver PDF
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Documento 4 (PDF) -->
-            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="guia de alertas sanitarias opcion 0 prevencion pdf">
+            <!-- Documento 4 (Google Sheets desde Google Drive) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-visible flex flex-col justify-between" data-title="programacion de personal linea 107 google sheets hoja de calculo turnos horarios">
                 <div class="p-5">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
-                            <i class="fa-solid fa-file-pdf mr-1.5"></i> PDF
+                        <span class="bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-excel mr-1.5"></i> SHEETS
                         </span>
                         <span class="text-xs text-gray-400 font-medium">Actualizado</span>
                     </div>
-                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Guía de Alertas Sanitarias (Opción 0)</h4>
-                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Directrices informativas para la orientación y prevención frente a enfermedades estacionales y emergencias epidemiológicas.</p>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Programación de personal - Linea 107</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Cuadro de programación horaria, distribución de turnos y asignación operativa del personal de la Línea 107.</p>
                 </div>
-                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
-                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
-                    <a href="documentos/guia_alertas_sanitarias.pdf" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
-                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
-                    </a>
+
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center rounded-b-xl">
+                    <span class="text-xs text-gray-500 font-medium">☁️ Google Drive</span>
+
+                    <!-- Contenedor con vista previa flotante al pasar el cursor -->
+                    <div class="relative group">
+                        <!-- Cajita de vista previa -->
+                        <div class="hidden group-hover:block fixed md:absolute bottom-12 right-4 md:right-0 z-50 w-80 h-60 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden pointer-events-none transition-opacity duration-150">
+                            <div class="bg-essalud-dark text-white text-[11px] px-3 py-1.5 flex items-center justify-between">
+                                <span class="truncate font-medium">Vista previa de la hoja</span>
+                                <i class="fa-solid fa-eye text-essalud-secondary"></i>
+                            </div>
+                            <iframe 
+                                src="https://docs.google.com/spreadsheets/d/1r34gb4Cv1EMt-47LGF7wZIcGl1wvE3s1z15Z4dPwbrI/preview" 
+                                class="w-full h-[calc(100%-28px)] border-0 bg-gray-100"
+                                loading="lazy"
+                                title="Vista previa de Programación de personal">
+                            </iframe>
+                        </div>
+
+                        <!-- Botón Ver Hoja (vista completa en nueva pestaña) -->
+                        <a href="https://docs.google.com/spreadsheets/d/1r34gb4Cv1EMt-47LGF7wZIcGl1wvE3s1z15Z4dPwbrI/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                            <i class="fa-solid fa-table mr-1.5"></i> Ver Hoja
+                        </a>
+                    </div>
                 </div>
             </div>
 
