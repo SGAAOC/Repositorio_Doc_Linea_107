@@ -117,23 +117,43 @@
                 </div>
             </div>
 
-            <!-- Documento 2 (Excel / Otro) -->
-            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col justify-between" data-title="matriz de turnos y programacion operativa agentes excel xlsx">
+            <!-- Documento 2 (PDF desde Google Drive) -->
+            <div class="doc-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-visible flex flex-col justify-between" data-title="proceso de atencion para llamadas mal intencionadas pdf">
                 <div class="p-5">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
-                            <i class="fa-solid fa-file-excel mr-1.5"></i> XLSX
+                        <span class="bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-md flex items-center">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> PDF
                         </span>
                         <span class="text-xs text-gray-400 font-medium">Actualizado</span>
                     </div>
-                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Matriz de Turnos y Programación Operativa</h4>
-                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Plantilla de control de turnos de operadores, validación de asistencias y distribución horaria del call center.</p>
+                    <h4 class="font-bold text-gray-800 text-base mb-2 hover:text-essalud-primary transition-colors">Proceso de Atención para Llamadas mal intencionadas</h4>
+                    <p class="text-xs text-gray-600 mb-4 line-clamp-2">Protocolo y lineamientos de actuación para operadores ante llamadas malintencionadas, improcedentes o reiterativas en la Línea 107.</p>
                 </div>
-                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center">
-                    <span class="text-xs text-gray-500 font-medium">📂 /documentos/</span>
-                    <a href="documentos/matriz_turnos.xlsx" target="_blank" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
-                        <i class="fa-solid fa-download mr-1.5"></i> Descargar / Ver
-                    </a>
+
+                <div class="bg-gray-50 px-5 py-3 border-t border-gray-100 flex justify-between items-center rounded-b-xl">
+                    <span class="text-xs text-gray-500 font-medium">☁️ Google Drive</span>
+
+                    <!-- Contenedor con vista previa flotante al pasar el cursor -->
+                    <div class="relative group">
+                        <!-- Cajita de vista previa -->
+                        <div class="hidden group-hover:block fixed md:absolute bottom-12 right-4 md:right-0 z-50 w-80 h-60 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden pointer-events-none transition-opacity duration-150">
+                            <div class="bg-essalud-dark text-white text-[11px] px-3 py-1.5 flex items-center justify-between">
+                                <span class="truncate font-medium">Vista previa del PDF</span>
+                                <i class="fa-solid fa-eye text-essalud-secondary"></i>
+                            </div>
+                            <iframe 
+                                src="https://drive.google.com/file/d/15UqrqkrYf-M6sVK5t0zkOt2ZUq5AHlh7/preview" 
+                                class="w-full h-[calc(100%-28px)] border-0 bg-gray-100"
+                                loading="lazy"
+                                title="Vista previa del PDF">
+                            </iframe>
+                        </div>
+
+                        <!-- Botón Ver PDF (vista completa en nueva pestaña) -->
+                        <a href="https://drive.google.com/file/d/15UqrqkrYf-M6sVK5t0zkOt2ZUq5AHlh7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-essalud-primary hover:bg-essalud-dark text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center shadow-sm">
+                            <i class="fa-solid fa-file-pdf mr-1.5"></i> Ver PDF
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -190,7 +210,7 @@
     <!-- Footer institucional -->
     <footer class="bg-essalud-dark text-gray-300 py-6 mt-12 border-t border-blue-900">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs space-y-3 md:space-y-0">
-            <p>© 2026 Seguro Social de Salud (EsSalud) - Central Telefónica Línea 107. Todos los derechos reservados.</p>
+            <p>© 2026 Seguro Social de Salud (EsSalud) - SGAAOC - Central Telefónica Línea 107. Todos los derechos reservados.</p>
             <div class="flex space-x-4">
                 <span class="flex items-center"><i class="fa-solid fa-shield-halved text-essalud-secondary mr-1"></i> Entorno Seguro</span>
                 <span class="flex items-center"><i class="fa-solid fa-code text-essalud-secondary mr-1"></i> GitHub Pages</span>
