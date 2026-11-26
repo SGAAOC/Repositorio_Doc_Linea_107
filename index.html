@@ -320,9 +320,80 @@
             }
         });
 
-        function handleLoginSubmit(event) {
+        const AUTH_API_URL = "http://172.20.60.86:5052/api/login";
+
+        async function handleLoginSubmit(event) {
             event.preventDefault();
-            // Aquí conectaremos la lógica de autenticación en los siguientes pasos
+
+            const usuarioInput = document.getElementById("loginUser");
+            const passwordInput = document.getElementById("loginPassword");
+            const form = document.getElementById("loginForm");
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            const usuario = usuarioInput.value.trim();
+            const password = passwordInput.value;
+
+            let errorEl = document.getElementById("loginErrorMsg");
+            if (!errorEl) {
+                errorEl = document.createElement("p");
+                errorEl.id = "loginErrorMsg";
+                errorEl.className = "text-xs text-red-600 font-medium bg-red-50 border border-red-200 rounded-lg px-3 py-2";
+                form.insertBefore(errorEl, submitBtn.parentElement);
+            }
+            errorEl.classList.add("hidden");
+            errorEl.textContent = "";
+
+            const textoOriginal = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1.5"></i> Validando...';
+
+            try {
+                const resp = await fetch(AUTH_API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ usuario, password })
+                });
+
+                const data = await resp.json().catch(() => ({}));
+
+                if (!resp.ok || !data.ok) {
+                    throw new Error(data.detail || "No se pudo iniciar sesión.");
+                }
+
+                sessionStorage.setItem("linea107_user", JSON.stringify(data));
+                updateSessionUI(data);
+                closeLoginModal();
+            } catch (err) {
+                errorEl.textContent = err.message || "Error al conectar con el servidor de autenticación.";
+                errorEl.classList.remove("hidden");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = textoOriginal;
+            }
+        }
+
+        function updateSessionUI(userData) {
+            const loginBtn = document.querySelector('button[onclick="openLoginModal()"]');
+            if (!loginBtn) return;
+
+            if (userData && userData.ok) {
+                loginBtn.innerHTML = `<i class="fa-solid fa-user-check mr-2"></i><span>${userData.nombres.split(" ")[0]} (${userData.cargo})</span>`;
+                loginBtn.onclick = function () {
+                    sessionStorage.removeItem("linea107_user");
+                    location.reload();
+                };
+                loginBtn.title = "Cerrar sesión";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const saved = sessionStorage.getItem("linea107_user");
+            if (saved) {
+                try {
+                    updateSessionUI(JSON.parse(saved));
+                } catch (_) {}
+            }
+        });
         }
     </script>
     
